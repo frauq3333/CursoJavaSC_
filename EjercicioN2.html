@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio Ponderado</title>
+</head>
+<body>
+    <h2>Calcular Promedio Ponderado</h2>
+
+    <label for="nota1">Ingresa la Nota 1 (40%):</label>
+    <input type="number" id="nota1" step="0.01"><br><br>
+
+    <label for="nota2">Ingresa la Nota 2 (30%):</label>
+    <input type="number" id="nota2" step="0.01"><br><br>
+
+    <label for="nota3">Ingresa la Nota 3 (30%):</label>
+    <input type="number" id="nota3" step="0.01"><br><br>
+
+    <button onclick="calcularPromedio()">Calcular Promedio</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPromedio() {
+            // Obtener las notas desde los campos de entrada
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Calcular el promedio ponderado
+            var promedio = (nota1 * 0.40) + (nota2 * 0.30) + (nota3 * 0.30);
+
+            // Verificar el resultado
+            if (promedio < 3.95) {
+                document.getElementById("resultado").innerText = "El promedio es " + promedio.toFixed(2) + ". El estudiante ha reprobado.";
+            } else if (promedio >= 3.95 && promedio <= 4.94) {
+                document.getElementById("resultado").innerText = "El promedio es " + promedio.toFixed(2) + ". El estudiante va a examen.";
+            } else if (promedio >= 4.95) {
+                document.getElementById("resultado").innerText = "El promedio es " + promedio.toFixed(2) + ". El estudiante se exime de la asignatura.";
+            }
+        }
+    </script>
+</body>
+</html>

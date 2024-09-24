@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumatoria</title>
+</head>
+<body>
+    <h2>Calcular la Sumatoria</h2>
+    <button onclick="calcularSumatoria()">Calcular S = 500 + 456 + 510 + ... + 800</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSumatoria() {
+            let suma = 0;
+
+            // Bucle para sumar desde 500 hasta 800
+            for (let i = 500; i <= 800; i += 2) {
+                suma += i;
+            }
+
+            // Mostrar el resultado en el párrafo
+            document.getElementById("resultado").innerText = "La suma es: " + suma;
+        }
+    </script>
+</body>
+</html>
